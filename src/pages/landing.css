@@ -1,0 +1,779 @@
+.landing {
+      --bg-app: #F6F9F7;
+      --bg-surface: #FFFFFF;
+      --bg-sage-light: #E8F0EC;
+      --bg-sage-muted: #D5E2DC;
+      --green-primary: #2E7D32;
+      --green-hover: #1B5E20;
+      --green-bright: #4CAF50;
+      --sage-dark: #4A635D;
+      --text-main: #1E293B;
+      --text-muted: #526560;
+      --border-subtle: #D8E4DE;
+      --amber-alert: #D97706;
+      --red-alert: #DC2626;
+      --shadow-sm: 0 2px 8px rgba(30, 58, 47, 0.06);
+      --shadow-md: 0 6px 20px rgba(30, 58, 47, 0.10);
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+
+.landing * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+.landing {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.5;
+      overflow-x: hidden;
+      padding-bottom: 4.5rem;
+    }
+
+@media (min-width: 768px) {
+.landing {
+        padding-bottom: 0;
+      }
+}
+
+@keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+@keyframes floatPlanet {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-6px) rotate(2deg);
+      }
+    }
+
+.landing .animateFadeUp {
+      animation: fadeSlideUp 0.6s ease-out forwards;
+    }
+
+.landing .animateFadeUpDelay1 {
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease-out 0.15s forwards;
+    }
+
+.landing .animateFadeUpDelay2 {
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease-out 0.3s forwards;
+    }
+
+.landing .planetFloat {
+      animation: floatPlanet 3.5s ease-in-out infinite;
+    }
+
+.landing .header {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0.65rem 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+.landing .headerInner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+.landing .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+    }
+
+.landing .brandTitle {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green-primary);
+      letter-spacing: -0.02em;
+    }
+
+.landing .brandSub {
+      font-size: 0.72rem;
+      color: var(--sage-dark);
+      display: block;
+    }
+
+.landing .odsBadges {
+      display: none;
+      gap: 0.4rem;
+    }
+
+@media (min-width: 900px) {
+.landing .odsBadges {
+        display: flex;
+      }
+}
+
+.landing .odsPill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background-color: var(--bg-sage-light);
+      color: var(--green-primary);
+      border: 1px solid var(--bg-sage-muted);
+    }
+
+.landing .navDesktop {
+      display: none;
+      gap: 0.35rem;
+    }
+
+@media (min-width: 768px) {
+.landing .navDesktop {
+        display: flex;
+      }
+}
+
+.landing .navMobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.45rem 0.25rem;
+      z-index: 1000;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+@media (min-width: 768px) {
+.landing .navMobile {
+        display: none;
+      }
+}
+
+.landing .navBtn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.72rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      transition: all 0.2s ease;
+    }
+
+@media (min-width: 768px) {
+.landing .navBtn {
+        flex-direction: row;
+        font-size: 0.85rem;
+        padding: 0.5rem 0.85rem;
+        gap: 0.4rem;
+      }
+}
+
+.landing .navBtn:hover {
+      background-color: var(--bg-sage-light);
+      color: var(--green-primary);
+    }
+
+.landing .navBtnActive {
+      background-color: var(--bg-sage-light);
+      color: var(--green-primary);
+      font-weight: 700;
+    }
+
+.landing .mainContainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+.landing .welcomeHero {
+      background: linear-gradient(145deg, #FFFFFF 0%, #E8F3EC 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 2rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.5rem;
+    }
+
+@media (min-width: 768px) {
+.landing .welcomeHero {
+        padding: 3rem 2rem;
+      }
+}
+
+.landing .welcomeTitle {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--green-primary);
+      margin-top: 0.75rem;
+      letter-spacing: -0.03em;
+    }
+
+@media (min-width: 768px) {
+.landing .welcomeTitle {
+        font-size: 2.75rem;
+      }
+}
+
+.landing .welcomeQuote {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--sage-dark);
+      max-width: 640px;
+      margin: 0.65rem auto 1.5rem;
+      line-height: 1.6;
+    }
+
+@media (min-width: 768px) {
+.landing .welcomeQuote {
+        font-size: 1.2rem;
+      }
+}
+
+.landing .ctaStartBtn {
+      background: linear-gradient(135deg, var(--green-primary), var(--green-bright));
+      color: #FFFFFF;
+      border: none;
+      padding: 0.95rem 2rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.32);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+.landing .ctaStartBtn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(46, 125, 50, 0.4);
+    }
+
+.landing .btnPrimary {
+      background-color: var(--green-primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s;
+    }
+
+.landing .btnPrimary:hover {
+      background-color: var(--green-hover);
+    }
+
+.landing .btnSecondary {
+      background-color: var(--bg-surface);
+      color: var(--green-primary);
+      border: 1px solid var(--green-primary);
+      padding: 0.55rem 0.95rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+
+.landing .btnSecondary:hover {
+      background-color: var(--bg-sage-light);
+    }
+
+.landing .filterBar {
+      display: flex;
+      gap: 0.45rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+.landing .filterChip {
+      white-space: nowrap;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-surface);
+      color: var(--sage-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+
+.landing .filterChipActive {
+      background-color: var(--green-primary);
+      color: #FFFFFF;
+      border-color: var(--green-primary);
+    }
+
+.landing .dotLegend {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+.landing .mapCard {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.25rem;
+    }
+
+.landing .leafletWrapper {
+      width: 100%;
+      height: 380px;
+      z-index: 1;
+    }
+
+@media (min-width: 768px) {
+.landing .leafletWrapper {
+        height: 460px;
+      }
+}
+
+.landing .mapLegendOverlay {
+      background-color: var(--bg-surface);
+      padding: 0.65rem 1rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+.landing .legendGroup {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+.landing .legendItem {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 600;
+    }
+
+.landing .detailBox {
+      background-color: var(--bg-surface);
+      border: 2px solid var(--green-primary);
+      border-radius: var(--radius-lg);
+      padding: 1.15rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.25rem;
+    }
+
+.landing .travelModesGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin: 0.85rem 0;
+      background-color: var(--bg-app);
+      padding: 0.65rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+@media (min-width: 640px) {
+.landing .travelModesGrid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+}
+
+.landing .travelBadge {
+      background-color: var(--bg-surface);
+      padding: 0.5rem;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid var(--border-subtle);
+    }
+
+.landing .travelIcon {
+      font-size: 1.15rem;
+      display: block;
+    }
+
+.landing .travelTime {
+      font-weight: 800;
+      font-size: 0.88rem;
+      color: var(--green-primary);
+      display: block;
+    }
+
+.landing .travelLabel {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+.landing .searchInput {
+      width: 100%;
+      padding: 0.7rem 0.95rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-surface);
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+    }
+
+.landing .searchInput:focus {
+      outline: 2px solid var(--green-bright);
+      border-color: transparent;
+    }
+
+.landing .placesGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.85rem;
+    }
+
+.landing .placeCard {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+.landing .placeCard:hover {
+      border-color: var(--green-bright);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+.landing .placeCardSelected {
+      border: 2px solid var(--green-primary);
+      background-color: var(--bg-sage-light);
+    }
+
+.landing .placeHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+.landing .placeTitle {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+.landing .statusBadge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+.landing .statusOpen {
+      background-color: #DCFCE7;
+      color: #166534;
+    }
+
+.landing .statusClosed {
+      background-color: #F1F5F9;
+      color: #475569;
+    }
+
+.landing .statusAlert {
+      background-color: #FEF3C7;
+      color: #92400E;
+    }
+
+.landing .placeMeta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+    }
+
+.landing .tagsRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+.landing .materialTag {
+      font-size: 0.72rem;
+      background-color: var(--bg-sage-light);
+      color: var(--sage-dark);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+.landing .autoGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+.landing .card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+.landing .weatherBanner {
+      background: linear-gradient(135deg, #2E7D32 0%, #4A635D 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+@media (min-width: 768px) {
+.landing .weatherBanner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+}
+
+.landing .chatBox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      max-height: 310px;
+      overflow-y: auto;
+      background-color: var(--bg-app);
+      padding: 0.85rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 0.75rem;
+    }
+
+.landing .chatMsg {
+      background-color: var(--bg-surface);
+      padding: 0.65rem 0.85rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--green-primary);
+      font-size: 0.86rem;
+    }
+
+.landing .kidsHeader {
+      background: linear-gradient(135deg, #DCFCE7 0%, #E0F2FE 100%);
+      border: 2px dashed #4CAF50;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+.landing .quizOption {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 12px;
+      border: 2px solid var(--border-subtle);
+      background-color: var(--bg-surface);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+.landing .quizOption:hover {
+      border-color: var(--green-primary);
+      background-color: var(--bg-sage-light);
+    }
+
+.landing .progressTrack {
+      width: 100%;
+      height: 16px;
+      background-color: var(--bg-sage-light);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 0.75rem 0;
+    }
+
+.landing .progressFill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green-primary), var(--green-bright));
+      transition: width 0.4s ease;
+    }
+
+.landing .modalBackdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+.landing .modalContent {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      max-width: 500px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 1.35rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+.landing .formGroup {
+      margin-bottom: 0.85rem;
+    }
+
+.landing .formLabel {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--text-main);
+    }
+
+.landing .formControl {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+    }
+
+.landing .footer {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 2.5rem;
+      padding: 1.5rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+.landing .footerInner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+@media (min-width: 768px) {
+.landing .footerInner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+}
+
+.landing .footerLinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+.landing .linkBtn {
+      background: none;
+      border: none;
+      color: var(--green-primary);
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 0.82rem;
+    }
+
+.landing .cookieBanner {
+      position: fixed;
+      bottom: 4.5rem;
+      left: 1rem;
+      right: 1rem;
+      background-color: #1E293B;
+      color: #F8FAFC;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      z-index: 1500;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+@media (min-width: 768px) {
+.landing .cookieBanner {
+        bottom: 1.25rem;
+        max-width: 680px;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+}
+
+.landing .eco-circle-marker {
+      border-radius: 50%;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s;
+    }
+
+.landing .eco-circle-marker:hover {
+      transform: scale(1.25);
+    }
+
+/* Enlaces (<Link>) con el mismo aspecto que los botones del diseño original */
+.landing a { text-decoration: none; }
+.landing a.navBtn { text-decoration: none; }
+.landing a.ctaStartBtn { text-decoration: none; }
+.landing .footerLinks a { color: var(--green-primary); font-weight: 600; }
+.landing .footerLinks a:hover { text-decoration: underline; }
+
+.landing { min-height: 100vh; }
